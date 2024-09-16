@@ -14,12 +14,12 @@ const Feed = () => {
   const fetchPosts = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await fetch(`https://randomuser.me/api/?page=${pageParam}&results=10`);
+      const response = await fetch(https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=10);
       const newPosts = await response.json();
       // Mock profile images for demonstration
       const postsWithImages = newPosts.map(post => ({
         ...post,
-        profileImage: `https://picsum.photos/50?random=${post.id}`
+        profileImage: https://picsum.photos/50?random=${post.id}
       }));
       setPosts(prevPosts => [...prevPosts, ...postsWithImages]);
       setLoading(false);
@@ -44,7 +44,7 @@ const Feed = () => {
       {posts.map(post => (
         <div key={post.id} className="post">
           <div className="post-header">
-            <img src={post.profileImage} alt={`Profile ${post.id}`} className="profile-image" />
+            <img src={post.profileImage} alt={Profile ${post.id}} className="profile-image" />
             <h2>{post.title}</h2>
           </div>
           <p>{post.body}</p>
