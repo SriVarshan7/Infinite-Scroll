@@ -14,7 +14,7 @@ const Feed = () => {
   const fetchPosts = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await fetch(`https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=10`);
+      const response = await fetch(`https://randomuser.me/api/?page=${pageParam}&results=10`);
       const newPosts = await response.json();
       // Mock profile images for demonstration
       const postsWithImages = newPosts.map(post => ({
